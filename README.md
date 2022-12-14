@@ -1,12 +1,12 @@
 # Done
 
--> Routes (React Router)
--> Login Form with react form Hook
--> Sign up Form with react form Hook
--> Public Routes
--> Rivate Routes
--> Contexte 
--> Fetching with Axios
+- Routes (React Router)
+- Login Form with react form Hook
+- Sign up Form with react form Hook
+- Public Routes
+- Rivate Routes
+- Contexte 
+- Fetching with Axios
 
 ## TODO
 
