@@ -16,22 +16,25 @@ function Layout({ outlet }) {
     };
     return (
         <>
-            <Navbar bg="light" variant="light">
+
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light"  >
                 <Container>
                     <Navbar.Brand>
                         <Link to="/" id='a'>
                             CARTOSI</Link>
                     </Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Link to="/cve" id='a'>CVE</Link>
-                        <Link to="/sw" id='a'>Sw</Link>
-                        <Link to="/hw" id='a'>Hw</Link>
-                        <Link to="/schema" id='a'>Schéma SI</Link>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <Link to="/cve" id='a'>CVE</Link>
+                            <Link to="/sw" id='a'>Sw</Link>
+                            <Link to="/hw" id='a'>Hw</Link>
+                            <Link to="/schema" id='a'>Schéma SI</Link>
 
-                    </Nav>
-                    <Button onClick={handlCick} variant="outline-danger">Se Déconnecter</Button>
+                        </Nav>
+                        <Button onClick={handlCick} variant="outline-danger">Se Déconnecter</Button>
+                    </Navbar.Collapse>
                 </Container>
-
             </Navbar>
             <h2 className='d-flex align-items-center justify-content-center'>{Auth.strucure}</h2>
             {outlet}

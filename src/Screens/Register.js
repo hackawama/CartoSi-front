@@ -3,12 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { apiRegister } from '../api/auth';
 
 function Register(props) {
     const { register, handleSubmit } = useForm();
     const onSubmit = async data => {
         try {
-            const response = await axios.post('http://localhost:8080/users', {
+            const response = await apiRegister({
                 name: data.username, password: data.password, roles: [{ id: 12 }],
                 structure: {
                     id: data.structure
@@ -19,12 +20,7 @@ function Register(props) {
             console.error(error);
         }
 
-        console.log({
-            name: data.username, password: data.password, roles: [{ id: 12 }],
-            structure: {
-                id: data.structure
-            }
-        })
+
     };
     return (
         <div className='login-page'>

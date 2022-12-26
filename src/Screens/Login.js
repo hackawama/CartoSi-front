@@ -3,13 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from 'axios';
+
 import { StoreToken } from '../utils/storage';
+import { getApiToken } from '../api/auth';
 function Login(props) {
     const { register, handleSubmit } = useForm();
     const onSubmit = async data => {
         try {
-            const response = await axios.post('http://localhost:8080/token', data);
+            const response = await getApiToken(data);
             StoreToken(response.data.TOKEN)
             window.location.reload();
         } catch (error) {
