@@ -1,3 +1,18 @@
 import apiClient from "./api";
 
 export const getStructureByIdApi = (data) => apiClient.get("/testsec1")
+export const getNetworks = () => apiClient.get("/networks")
+export const saveNetwork = (data) => apiClient.post("/networks", data)
+export const getBuildings = () => apiClient.get("/buildings")
+export const saveBuilding = (data) => apiClient.post("/buildings", data)
+export const getStages = () => apiClient.get("/stages")
+export const saveStage = (data) => apiClient.post("/stages", data)
+export const getRooms = () => apiClient.get("/rooms")
+export const saveRoom = (data) => apiClient.post("/rooms", data)
+export const saveComputer = (data) => apiClient.post("/computers", data)
+export const getComputers = () => apiClient.get("/computers")
+export const savePhone = (data) => apiClient.post("/phones", data)
+export const getPhones = () => apiClient.get("/phones")
+export const saveSwitches = (data) => apiClient.post("/switches", data)
+export const getSwitches = () => apiClient.get("/switches")
+export const getDeviceTypes = () => apiClient.get("/devicetypes")

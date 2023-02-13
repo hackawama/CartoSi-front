@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Form } from 'react-bootstrap'
 import { getStructureByIdApi } from '../api/generic'
+import schema from "../images/schema.png"
 
 function Schema() {
     const getStructureById = async () => {
@@ -16,9 +17,11 @@ function Schema() {
     }, [])
 
     return (
-        <div className="d-flex align-items-center justify-content-center vh-100">
-
+        <div className="d-flex flex-column align-items-center justify-content-center ">
+            <img src={schema} alt="" />
             <Form.Group controlId="formFileLg" className="mb-3">
+
+
                 <Form.Label>Schéma du SI</Form.Label>
                 <Form.Control type="file" size="lg" />
             </Form.Group></div>

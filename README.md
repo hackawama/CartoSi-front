@@ -12,10 +12,17 @@
 - Api Calls optimisation 
 
 ## TODO
-## Busnies 
 
+## Busnies 
+- Delete Function
 ## Technical
 - Manage ERRORS 
 -INPUTS validation
+-Loading 
 
 
+## BUGS
+- After Token Expiration we should reload the login page
+- When we add a stage we should reload to see the buildiname attribute
+- Sync The selected ROOm and Device 
+- make parent device more smooth

@@ -17,18 +17,23 @@ import Register from './Screens/Register';
 import { removeToken } from './utils/storage';
 import jwt_decode from "jwt-decode";
 import Layout from './Layout';
-import Cve from './Screens/Cve';
+import Rooms from './Screens/Rooms';
 import ErrorScreen from './Screens/ErrorScreen';
-import Sw from './Screens/Sw';
-import Hw from './Screens/Hw';
-import Schema from './Screens/Schema';
 import AuthContext from './utils/context';
-
+import Networks from './Screens/Networks';
+import Buildings from './Screens/Building';
+import Stages from './Screens/Stages';
+import Computer from './Screens/Devices/Computer';
+import Phone from './Screens/Devices/Phone';
+import Switch from './Screens/Devices/Switch';
+import Dashboard from './Screens/Dashboard';
+import Physical from './Screens/Physical';
 if (localStorage.cartoToken) {
   const decode = jwt_decode(localStorage.cartoToken);
   const currentTime = Date.now() / 1000;
   if (decode.exp < currentTime) {
     removeToken();
+    console.log("TOKEN REMOVED FROM INDEX JS")
   }
 }
 const router = createBrowserRouter([
@@ -52,24 +57,42 @@ const Authrouter = createBrowserRouter([
     errorElement: <ErrorScreen />,
     children: [
       {
-        path: "/cve",
-        element: <Cve />,
+        path: "/networks",
+        element: <Networks />,
+      },
+
+      {
+        path: "/buildings",
+        element: <Buildings />,
       },
       {
-        path: "/sw",
-        element: <Sw />,
+        path: "/stages",
+        element: <Stages />,
       },
       {
-        path: "/hw",
-        element: <Hw />,
+        path: "/rooms",
+        element: <Rooms />,
       },
       {
-        path: "/schema",
-        element: <Schema />,
+        path: "/computers",
+        element: <Computer />,
       },
+      {
+        path: "/phones",
+        element: <Phone />,
+      },
+      {
+        path: "/switches",
+        element: <Switch />,
+      },
+
       {
         path: "/",
-        element: <Home />,
+        element: <Dashboard />,
+      },
+      {
+        path: "/physical",
+        element: <Physical />,
       }
     ]
   }]);

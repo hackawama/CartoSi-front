@@ -4,8 +4,7 @@ const authToken = getToken();
 const apiClient = axios.create({
     baseURL: `http://localhost:8080`,
     headers: {
-        "Authorization": authToken ? "Bearer " + authToken : "",
-
+        "Authorization": authToken ? "Bearer " + authToken : null,
     }
 })
 
